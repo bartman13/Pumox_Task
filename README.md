@@ -2,20 +2,20 @@
 ## General info
 Respository created for interviev execrise for Pumox GmbH Company.
 
-Used components:
+## Used components:
 -Ms Sql Server
 -Asp Net Core Api 3.1
 -Linq
 -EntityFramework Core
 -AutoMapper
 -JsonSerialization
-
+## Credentials
 Credentials set in appsettings.json
 
 username : "user"
 password: "password"
 
-Examples of Endpoints:
+## Examples of Endpoints:
 
 /company/create:
 {
