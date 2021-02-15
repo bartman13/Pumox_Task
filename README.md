@@ -1,6 +1,6 @@
 # Pumox_Task
 ## General info
-Respository created for interviev execrise for Pumox GmbH Company.
+Respository created  for Pumox GmbH Company interviev exercise.
 
 ## Used components:
 -Ms Sql Server\
