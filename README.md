@@ -1,5 +1,5 @@
 # Pumox_Task
-# Foobar
+## General info
 Respository created for interviev execrise for Pumox GmbH Company.
 
 Used components:
