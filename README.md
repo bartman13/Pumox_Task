@@ -7,7 +7,7 @@ Used components:
 -Asp Net Core Api 3.1
 -Linq
 -EntityFramework Core
--AoutMapper
+-AutoMapper
 -JsonSerialization
 
 Credentials set in appsettings.json
