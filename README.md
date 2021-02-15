@@ -18,6 +18,7 @@ password: "password"
 ## Examples of Endpoints:
 
 /company/create:
+```json
 {
         "Name": "Moja Testowa Firma",
         "EstablishmentYear": 1998,
@@ -37,7 +38,7 @@ password: "password"
         ]
 	
 }
-
+```
 /company/search:
 {
     
