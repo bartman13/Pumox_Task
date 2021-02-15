@@ -3,7 +3,7 @@
 Respository created for interviev execrise for Pumox GmbH Company.
 
 ## Used components:
--Ms Sql Server
+\-Ms Sql Server
 -Asp Net Core Api 3.1
 -Linq
 -EntityFramework Core
