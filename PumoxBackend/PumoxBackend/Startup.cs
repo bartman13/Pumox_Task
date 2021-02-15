@@ -29,7 +29,10 @@ namespace PumoxBackend
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration["DatabaseConnectionString"];
+<<<<<<< HEAD
             services.AddAutoMapper(typeof(Startup));
+=======
+>>>>>>> main
             services.Configure<IISOptions>(options => {
 
             });
