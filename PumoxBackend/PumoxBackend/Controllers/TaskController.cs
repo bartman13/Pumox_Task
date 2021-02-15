@@ -8,8 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace PumoxBackend.Controllers
 {
@@ -25,7 +24,7 @@ namespace PumoxBackend.Controllers
             _context = context;
             _mapper = mapper;
         }
-
+        [Authorize]
         [HttpPost("create")]
         public IActionResult CompanyCreate([FromBody] CompanyTransfer value)
         {
@@ -34,16 +33,23 @@ namespace PumoxBackend.Controllers
             _context.SaveChanges();
             return Ok(new CompanyCreateResponse {Id = company.Id });
         }
+        
         [HttpPost("search")]
         public async Task<IActionResult> CompanySearch([FromBody] SearchRequest value)
         {
-            if(value.EmployeeDateOfBirthFrom == null && value.EmployeeDateOfBirthTo == null)
+            if(value.EmployeeDateOfBirthTo == null)
             {
-                value.EmployeeDateOfBirthFrom = DateTime.MaxValue;
                 value.EmployeeDateOfBirthTo = DateTime.MinValue; // zamiana na wartości tak aby nie były brane pod uwagę w zapytaniu  wprzypadku null
             }
-            value.EmployeeDateOfBirthFrom ??= DateTime.MinValue;
-            value.EmployeeDateOfBirthTo ??= DateTime.MaxValue;
+            if(value.EmployeeDateOfBirthFrom == null)
+            {
+                value.EmployeeDateOfBirthFrom = DateTime.MinValue;
+            }
+         
+            if(value.EmployeeDateOfBirthFrom > value.EmployeeDateOfBirthTo)
+            {
+                return BadRequest("EmployeeDateOfBirthFrom is greater than EmployeeDateOfBirthTo");
+            }
             List<JobTitle> titles;
             try
             {
@@ -69,6 +75,8 @@ namespace PumoxBackend.Controllers
                 .ToListAsync();
             return Ok(new SearchResponse {Results = companies }); 
         }
+
+        [Authorize]
         [HttpPut("update/{id?}")]
         public IActionResult CompanyUpdate(int id,[FromBody]  CompanyTransfer value )
         {
@@ -78,13 +86,14 @@ namespace PumoxBackend.Controllers
                 _mapper.Map(value,company);
                 _context.Companies.Update(company);
                 _context.SaveChanges();
-                return Ok();
+                return Ok("Success");
             }
             catch(ArgumentNullException)
             {
                 return BadRequest("Element with given Id does not exist");
             }
         }
+        [Authorize]
         [HttpDelete("delete/{id?}")]
         public  IActionResult CompanyDelete(int id)
         {
@@ -93,7 +102,7 @@ namespace PumoxBackend.Controllers
             {
                 _context.Companies.Remove(_context.Companies.SingleOrDefault(el => el.Id == id));
                 _context.SaveChanges();
-                return Ok();
+                return Ok("Success");
             }
             catch(ArgumentNullException)
             {
