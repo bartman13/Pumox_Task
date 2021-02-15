@@ -8,7 +8,7 @@ Respository created for interviev execrise for Pumox GmbH Company.
 -Linq\
 -EntityFramework Core\
 -AutoMapper \
--JsonSerialization\
+-JsonSerialization
 ## Credentials
 Credentials set in appsettings.json
 
