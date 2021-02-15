@@ -19,6 +19,7 @@ Examples of Endpoints:
 
 /company/create:
 {
+	{
         "Name": "Moja Testowa Firma",
         "EstablishmentYear": 1998,
         "Employees": [
@@ -35,13 +36,13 @@ Examples of Endpoints:
                  "JobTitle": "Manager"
             }
         ]
+	}
 }
 
 /company/search:
 {
     
         {
-    
         "Keyword": "a",
         "EmployeeDateOfBirthFrom": "1998-01-27",
         "EmployeeDateOfBirthTo": "1998-01-30" ,
@@ -51,6 +52,7 @@ Examples of Endpoints:
 
 /company/update/8
 {
+	{
         "Name": "Moja zmieniona firma",
         "EstablishmentYear": 1998,
         "Employees": [
@@ -67,6 +69,7 @@ Examples of Endpoints:
                  "JobTitle": "Manager"
             }
         ]
+	}
 }
 
 /company/delete/
