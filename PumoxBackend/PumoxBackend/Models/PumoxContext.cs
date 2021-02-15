@@ -35,8 +35,6 @@ namespace PumoxBackend.Models
 
             modelBuilder.Entity<Company>(entity =>
             {
-                entity.Property(e => e.EstablishmentYear).HasColumnType("datetime");
-
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -44,15 +42,19 @@ namespace PumoxBackend.Models
 
             modelBuilder.Entity<Employee>(entity =>
             {
-                entity.Property(e => e.DateOfBirth).HasColumnType("datetime");
+                entity.Property(e => e.DateOfBirth).HasColumnType("date");
 
                 entity.Property(e => e.FirstName)
                     .IsRequired()
-                    .HasMaxLength(30);
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.JobTitle)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.LastName)
                     .IsRequired()
-                    .HasMaxLength(30);
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.Company)
                     .WithMany(p => p.Employees)
