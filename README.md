@@ -19,7 +19,6 @@ password: "password"
 
 /company/create:
 {
-	{
         "Name": "Moja Testowa Firma",
         "EstablishmentYear": 1998,
         "Employees": [
@@ -36,7 +35,7 @@ password: "password"
                  "JobTitle": "Manager"
             }
         ]
-	}
+	
 }
 
 /company/search:
