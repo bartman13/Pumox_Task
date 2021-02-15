@@ -40,6 +40,7 @@ password: "password"
 }
 ```
 /company/search:
+```json
 {
     
         {
@@ -49,8 +50,9 @@ password: "password"
         "EmployeeJobTitles": ["Manager","Architect"]
 	}
 }
-
+```
 /company/update/8
+```json
 {
 	{
         "Name": "Moja zmieniona firma",
@@ -71,6 +73,6 @@ password: "password"
         ]
 	}
 }
-
+```
 /company/delete/
 {}
