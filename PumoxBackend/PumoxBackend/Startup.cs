@@ -1,3 +1,4 @@
+using BackEnd.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,10 @@ namespace PumoxBackend
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration["DatabaseConnectionString"];
+<<<<<<< HEAD
+            services.AddAutoMapper(typeof(Startup));
+=======
+>>>>>>> main
             services.Configure<IISOptions>(options => {
 
             });
@@ -48,6 +53,8 @@ namespace PumoxBackend
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

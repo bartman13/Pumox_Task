@@ -37,7 +37,7 @@ GO
 CREATE TABLE Companies (
 	Id bigint IDENTITY (1, 1) NOT NULL ,
 	"Name" nvarchar (50) NOT NULL,
-	EstablishmentYear datetime NULL,
+	EstablishmentYear int NOT NULL,
 	CONSTRAINT PK_Companies PRIMARY KEY CLUSTERED
 	(
 		Id
@@ -47,10 +47,10 @@ GO
 
 CREATE TABLE Employees(
 	Id bigint IDENTITY(1, 1) NOT NULL,
-	FirstName nvarchar (30) NOT NULL,
-	LastName  nvarchar (30) NOT NULL,
-	DateOfBirth datetime NULL,
-	JobTitle tinyint NOT NULL,
+	FirstName nvarchar (50) NOT NULL,
+	LastName  nvarchar (50) NOT NULL,
+	DateOfBirth date NOT NULL,
+	JobTitle nvarchar (50) NOT NULL,
 	CompanyId bigint NOT NULL,
 	CONSTRAINT PK_Employees PRIMARY KEY CLUSTERED
 	(

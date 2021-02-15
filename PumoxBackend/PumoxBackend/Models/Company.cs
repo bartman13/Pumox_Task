@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace PumoxBackend.Models
 {
-    public partial class Company
+    public partial class Company 
     {
         public Company()
         {
@@ -14,8 +14,9 @@ namespace PumoxBackend.Models
 
         public long Id { get; set; }
         public string Name { get; set; }
-        public DateTime? EstablishmentYear { get; set; }
+        public int EstablishmentYear { get; set; }
 
         public virtual ICollection<Employee> Employees { get; set; }
     }
+    
 }
