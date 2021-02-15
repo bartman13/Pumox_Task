@@ -36,25 +36,20 @@ password: "password"
                  "JobTitle": "Manager"
             }
         ]
-	
 }
 ```
 /company/search:
 ```json
 {
-    
-        {
         "Keyword": "a",
         "EmployeeDateOfBirthFrom": "1998-01-27",
         "EmployeeDateOfBirthTo": "1998-01-30" ,
         "EmployeeJobTitles": ["Manager","Architect"]
-	}
 }
 ```
 /company/update/8
 ```json
 {
-	{
         "Name": "Moja zmieniona firma",
         "EstablishmentYear": 1998,
         "Employees": [
@@ -71,7 +66,6 @@ password: "password"
                  "JobTitle": "Manager"
             }
         ]
-	}
 }
 ```
 /company/delete/
