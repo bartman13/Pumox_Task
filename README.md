@@ -1,6 +1,5 @@
-# Pumox_Task
+# Simple_Api
 ## General info
-Respository created  for Pumox GmbH Company interviev exercise.
 
 ## Used components:
 -Ms Sql Server\
