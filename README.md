@@ -2,70 +2,24 @@
 ## General info
 
 ## Used components:
--Ms Sql Server\
--Asp Net Core Api 3.1\
--Linq\
--EntityFramework Core\
--AutoMapper \
--JsonSerialization
-## Credentials
-Credentials set in appsettings.json
+- Ms Sql Server\
+- Asp Net Core Api 3.1\
+- Linq\
+- EntityFramework Core\
+- AutoMapper \
+## Requirements
+- Visual Studio with Asp Net Core 3.1 Installed\
+- MsSql Server\
+- Yarn or Npx installed
+## To run Web Api:
+1.Download repo\
+2. Open Ms Sql Management aplication and run Database/init.sql script.\
+3. Open WebApi/WebApi.sln\
+4. Build and run aplication\
+5. Every operation can be made from swagger layout\
+## To run ReactApp:
+1. Open prefered editor
+2. Open console
+3. Run 'yarn start' or 'npm start'
 
-username : "user"\
-password: "password"
-
-## Examples of Endpoints:
-
-/company/create:
-```json
-{
-        "Name": "Moja Testowa Firma",
-        "EstablishmentYear": 1998,
-        "Employees": [
-             {
-                 "FirstName": "Bart",
-                 "LastName": "Luszt",
-                 "DateOfBirth": "1990-01-27",
-                "JobTitle": "Architect"
-            },
-             {
-                 "FirstName": "Roman",
-                 "LastName": "Luszt",
-                 "DateOfBirth": "1972-01-27",
-                 "JobTitle": "Manager"
-            }
-        ]
-}
-```
-/company/search:
-```json
-{
-        "Keyword": "a",
-        "EmployeeDateOfBirthFrom": "1998-01-27",
-        "EmployeeDateOfBirthTo": "1998-01-30" ,
-        "EmployeeJobTitles": ["Manager","Architect"]
-}
-```
-/company/update/8
-```json
-{
-        "Name": "Moja zmieniona firma",
-        "EstablishmentYear": 1998,
-        "Employees": [
-             {
-                 "FirstName": "Bart",
-                 "LastName": "Luszt",
-                 "DateOfBirth": "1990-01-27",
-                "JobTitle": "Architect"
-            },
-             {
-                 "FirstName": "Roman",
-                 "LastName": "Luszt",
-                 "DateOfBirth": "1972-01-27",
-                 "JobTitle": "Manager"
-            }
-        ]
-}
-```
-/company/delete/
-{}
+ 
